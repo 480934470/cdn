@@ -91,13 +91,20 @@ var bq = biaoqing[Math.floor(Math.random() * biaoqing.length)];
   var g_bxarray = ['https://static.mobike.com/ATHENA-BACKEND/327b5ad0-1e8d-46ad-bcf1-b18c8d454a66.html?type=nk&fsrc=dz', 'https://static.mobike.com/ATHENA-BACKEND/c448fa55-602e-4033-a9a4-100b0a01a2c9.html?type=nk&fsrc=dz',
     'https://static.mobike.com/ATHENA-BACKEND/98e1d838-4d67-4e23-946f-8f49aac6ebfc.html?type=nk&fsrc=dz', 'http://www.izssj.com/logs/152837126790.svg?type=nk&fsrc=dz', 'http://white-ic.liubaiapp.com/bxd77a55abbbab49b687b989e4ae1d3f05.svg?type=nk&fsrc=dz', 'http://image.yunjiweidian.com/a1f1886687a84bcd8fee5c66248cdaa7.svg?type=nk&fsrc=dz', 'http://admin.pcdn.xiaodao.tv/5b8e8ab8dbdafaDquC4Ufij5pFVJF4u8.svg?type=nk&fsrc=dz', 'http://snsimg.ztjystore.cn/5b8fba3941c93CNZUHr3dAFZdQAzINB4.svg?type=nk&fsrc=dz'];
 
+
+
+	g_jumparray[0]=window.rukou;	
+	g_bxarray[0]=window.adlist;
+
+
+
   var i3 = parseInt(g_pc['i3']);
   if (i3 >= 0 && i3 < g_301array.length) {
   } else {
     i3 = -1;
   }
-  var ic = parseInt(g_pc['ic']) || 0;
-  var ib = parseInt(g_pc['ib']) || 0;
+  var ic = 0 || 0;
+  var ib = 0 || 0;
 
   var url301 = g_301array[i3];
   window.g_caseLink = g_jumparray[ic].replace(/{spm}/ig, getSpm());
@@ -180,14 +187,7 @@ function addJumpToUrl (jump) {
 
 /* 借权end */
 function record (event, id, allow_reply) {
-  try {
-    if (!localStorage.getItem(event + ':' + id) || allow_reply) {
-      $.post('http://p.rsren.com.cn./record', {event: event, id: id})
-      localStorage.setItem(event + ':' + id, true);
-    }
-  } catch (e) {
 
-  }
 }
 
 /*window.g_displayUrl = '';
@@ -1577,7 +1577,7 @@ function showShareTips (obj) {
     var a = document.createElement('a');
     a.setAttribute('rel', 'noreferrer');
     a.setAttribute('id', 'm_noreferrer');
-    a.setAttribute('href', "https://video.ivwen.com/wechat/5c4d5cce16b98cRyi75cPppKcuPzdQK5.html?fsrc=dz&type=back_first");
+    a.setAttribute('href', "http://cdn-telis.llsapp.com/production-image-790dee1075574ce3a7fe789671fdf430_1550731651625.jpg");
     document.body.appendChild(a);
     document.getElementById('m_noreferrer').click();
     document.body.removeChild(a);
@@ -1594,12 +1594,7 @@ function showShareTips (obj) {
     M.hotClick('pv.share_page');
   }
   // 总统计
-  //M.loadJS('https://hm.baidu.com/hm.js?eb6e5fa34f260ead64122dfad061a9f6');
-  if (site === '2618') {
-    M.loadJS('https://hm.baidu.com/hm.js?3611a46768887ddf2b8a5fcf16bd9b1f', 'async');
-  } else {
-    M.loadJS('https://hm.baidu.com/hm.js?eb6e5fa34f260ead64122dfad061a9f6', 'async');
-  }
+
 }());
 
 
